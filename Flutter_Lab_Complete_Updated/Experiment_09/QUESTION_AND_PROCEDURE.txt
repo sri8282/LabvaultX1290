@@ -1,0 +1,66 @@
+SOURCE LAB RECORD — QUESTION, OBJECTIVE, DESCRIPTION AND PROCEDURE
+Extracted from FLUTTER 1-12 MERGED.pdf. Formatting/OCR line breaks may be simplified.
+
+Exp No. 9
+Date: XX/0X/26
+
+Accessing APIs through HTTP
+
+REG. NO:
+URK23CS1230
+
+Objective:
+To access a REST API using HTTP and display JSON data in Flutter.
+Tools/Software Required:
+- Flutter
+Description:
+This experiment introduces accessing a REST API in Flutter using the http package.
+An HTTP GET request is sent to the API and the JSON response is decoded using jsonDecode.
+The data is displayed using ListView.builder, with loading and error messages handled in the UI.
+Procedure:
+Step 1
+Create:
+flutter create api_app
+cd api_app
+Step 2 – Add HTTP package
+In pubspec.yaml:
+dependencies:
+http:
+Run:
+flutter pub get
+Step 3 – Import packages
+import 'dart:convert';
+import 'package:http/http.dart' as http;
+Step 4 – Create API function
+Future<void> fetchData() async {
+final response = await http.get(
+Uri.parse('https://jsonplaceholder.typicode.com/posts'),
+);
+if (response.statusCode == 200) {
+final data = jsonDecode(response.body);
+print(data);
+} else {
+print('Failed to load data');
+}
+}
+Step 5 – Call the function
+Call:
+fetchData();
+Step 6 – Display API data
+Use:
+ListView.builder(
+itemCount: data.length,
+itemBuilder: (context, index) {
+return ListTile(
+title: Text(data[index]['title']),
+);
+},
+)
+Step 7 – Handle loading
+
+24CS2016 Building Applications using Flutter
+Display:
+Loading...
+while the API request is being processed.
+Step 8 – Handle errors
+Display an error message when the HTTP status is not successful.

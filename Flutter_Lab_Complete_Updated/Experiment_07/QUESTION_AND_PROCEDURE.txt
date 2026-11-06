@@ -1,0 +1,84 @@
+SOURCE LAB RECORD — QUESTION, OBJECTIVE, DESCRIPTION AND PROCEDURE
+Extracted from FLUTTER 1-12 MERGED.pdf. Formatting/OCR line breaks may be simplified.
+
+Exp No. 7
+Date: 28/09/26
+
+Application State Management
+and Serialization
+
+REG. NO:
+URK23CS1230
+
+Objective:
+To manage application state and serialize/deserialize data using JSON.
+Tools/Software Required:
+- Flutter
+Description:
+This experiment introduces application state management and JSON serialization in Flutter.
+A Student model class is created with toJson and fromJson methods to convert between Dart objects and JSON.
+A list is maintained as application state and updated using setState, and the data is displayed using ListView.builder.
+Procedure:
+Step 1
+Create project:
+flutter create state_app
+cd state_app
+code .
+Step 2 – Create Student model
+Create:
+lib/student.dart
+Add:
+class Student {
+final int id;
+final String name;
+final String course;
+Student({
+required this.id,
+required this.name,
+required this.course,
+});
+Map<String, dynamic> toJson() {
+return {
+'id': id,
+'name': name,
+'course': course,
+};
+}
+factory Student.fromJson(Map<String, dynamic> json) {
+return Student(
+id: json['id'],
+name: json['name'],
+course: json['course'],
+);
+}
+}
+Step 3 – Create student object
+Student student = Student(
+id: 1,
+name: 'Viknan S',
+course: 'CSE',
+);
+
+24CS2016 Building Applications using Flutter
+Step 4 – Convert object to JSON
+Map<String, dynamic> data = student.toJson();
+print(data);
+Step 5 – Convert JSON back to object
+Student newStudent = Student.fromJson(data);
+print(newStudent.name);
+Step 6 – Add state
+Create a list:
+List<String> students = [];
+Add student:
+setState(() {
+students.add('Viknan S');
+});
+Step 7 – Display list
+ListView.builder(
+itemCount: students.length,
+itemBuilder: (context, index) {
+return ListTile(
+title: Text(students[index]),
+);
+},
+)

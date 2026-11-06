@@ -1,0 +1,40 @@
+EXPERIMENT 8
+Title: Data Persistence using SQLite and Firebase
+
+Objective:
+To implement data persistence using a local SQLite database and cloud Firebase database.
+
+Tools/Software Required:
+Flutter
+
+Description:
+Student records are stored locally in an SQLite database using the sqflite package with CRUD operations.
+Student data is also stored in and retrieved from a Firebase cloud collection.
+
+Procedure from the lab record:
+PART A - SQLite
+1. Create project: flutter create sqlite_app
+2. Move into project: cd sqlite_app
+3. Add SQLite packages such as sqflite and path in pubspec.yaml.
+4. Run flutter pub get.
+5. Create lib/database_helper.dart.
+6. Create a students table with id, name and course.
+7. Implement CREATE, READ, UPDATE and DELETE.
+8. Insert student information from text fields.
+9. Display records using ListView.builder().
+10. Close and run the app again to verify persistence.
+
+PART B - Firebase
+11. Create a Firebase project in Firebase Console.
+12. Configure/connect the Flutter application to Firebase.
+13. Add required Firebase packages.
+14. Initialize Firebase before running the app.
+15. Create a students collection with name and course fields.
+16. Insert student information into Firebase.
+17. Retrieve and display Firebase records.
+
+Note:
+The provided lab-record section gives the procedure but does not include a complete Program listing. The main.dart and database_helper.dart in this folder are a basic SQLite CRUD implementation. Firebase needs project-specific configuration and is not automatically configured by the sample code.
+
+Result:
+Student records are stored locally using SQLite CRUD operations. Firebase records can be inserted and retrieved after Firebase setup.

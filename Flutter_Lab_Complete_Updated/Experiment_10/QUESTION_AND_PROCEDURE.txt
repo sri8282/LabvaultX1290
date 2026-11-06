@@ -1,0 +1,29 @@
+EXPERIMENT 10
+Title: ADD ANDROID AS A BUILD TARGET
+
+Objective:
+To configure and build a Flutter application for the Android platform.
+
+Tools/Software Required:
+Flutter, Android SDK, Android emulator or Android device.
+
+Description:
+Configure Flutter for Android development, check connected Android devices, accept Android SDK licenses, run the application on an Android device or emulator, and generate an APK file.
+
+Procedure from the lab record:
+1. Check Flutter and Android toolchain: flutter doctor
+2. Check devices: flutter devices
+3. Accept licenses: flutter doctor --android-licenses (enter y when prompted).
+4. Create app: flutter create android_app
+5. Enter folder: cd android_app
+6. Start an emulator (the record uses Medium_Phone_API_36.1): flutter emulators --launch Medium_Phone_API_36.1
+7. Run: flutter run
+8. Build APK: flutter build apk
+9. Find APK at: build/app/outputs/flutter-apk/app-release.apk
+10. Install and test the APK on Android.
+
+Program:
+The source record uses Flutter's standard counter application. The main.dart included here is a concise equivalent counter program.
+
+Result:
+The Flutter application is configured, built and executed as an Android application. The APK is generated and can be installed on an Android device.

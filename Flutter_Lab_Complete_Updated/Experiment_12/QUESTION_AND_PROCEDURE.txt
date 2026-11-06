@@ -1,0 +1,30 @@
+EXPERIMENT 12
+Title: BUILD WEB APP WITH FLUTTER
+
+Objective:
+To develop, run, and build a responsive Flutter application for the Web using Flutter and Chrome.
+
+Tools/Software Required:
+Flutter and Chrome.
+
+Description:
+Create and run a Flutter Web application in Chrome. Use LayoutBuilder so the interface changes according to browser width, then generate a production build using flutter build web.
+
+Procedure from the lab record:
+1. Check Flutter: flutter doctor
+2. Check devices/browser: flutter devices
+3. Create project: flutter create flutter_web_app
+4. Enter folder: cd flutter_web_app
+5. Open VS Code: code .
+6. Create the web interface in lib/main.dart using Scaffold, AppBar and ElevatedButton.
+7. Implement responsive layout using LayoutBuilder for mobile and desktop widths.
+8. Run in Chrome: flutter run -d chrome
+9. Resize Chrome and test mobile/desktop layouts.
+10. Build: flutter build web
+11. Generated files are in build/web/.
+
+Program:
+The original lab record contains a longer styled dashboard program. The included main.dart is a compact responsive LayoutBuilder program that demonstrates the required mobile Column and desktop Row behavior.
+
+Result:
+A responsive Flutter Web application is developed, executed in Chrome, tested at different screen sizes and built for production.

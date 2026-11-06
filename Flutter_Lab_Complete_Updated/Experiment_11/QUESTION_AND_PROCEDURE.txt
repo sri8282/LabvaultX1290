@@ -1,0 +1,27 @@
+EXPERIMENT 11
+Title: ADD iOS AS A BUILD TARGET
+
+Objective:
+To configure a Flutter application for the iOS platform and understand the process of building and testing the application using Xcode and an iOS Simulator.
+
+Tools/Software Required:
+Flutter, macOS and Xcode for actual iOS building/testing.
+
+Description:
+The iOS platform files are generated using flutter create. The application can be opened in Xcode, tested using an iOS Simulator, and built for iOS distribution. Actual iOS building and testing require macOS and Xcode.
+
+Procedure from the lab record:
+1. Check installation: flutter doctor
+2. Check devices: flutter devices
+3. Create project: flutter create ios_app
+4. Enter project: cd ios_app
+5. Verify iOS files: dir ios (on macOS/Linux, ls ios can be used).
+6. Analyze: flutter analyze
+7. Open Xcode workspace on macOS: open ios/Runner.xcworkspace
+8. Select an iOS Simulator in Xcode.
+9. Run: flutter run
+10. Test UI, navigation, text fields, buttons, images and screen transitions.
+11. Build: flutter build ios
+
+Result:
+The Flutter project and iOS platform configuration files are generated. Actual iOS building and simulator testing require macOS and Xcode.

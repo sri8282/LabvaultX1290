@@ -1,0 +1,10 @@
+Open pubspec.yaml and find the existing dependencies: section.
+Add this line under dependencies: (keep indentation):
+
+  http: ^1.2.2
+
+Save the file, then run:
+  flutter pub get
+
+Then run the app:
+  flutter run -d chrome

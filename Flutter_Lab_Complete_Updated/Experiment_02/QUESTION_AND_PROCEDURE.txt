@@ -1,0 +1,91 @@
+SOURCE LAB RECORD — QUESTION, OBJECTIVE, DESCRIPTION AND PROCEDURE
+Extracted from FLUTTER 1-12 MERGED.pdf. Formatting/OCR line breaks may be simplified.
+
+Exp No. 2
+Date: 24/08/26
+
+Adaptive and Responsive UI Design
+
+REG. NO:
+URK23CS1230
+
+Objective:
+To create a Flutter application that automatically adapts its layout according to
+screen size.
+Tools/Software Required:
+- Flutter
+Description:
+This experiment introduces adaptive and responsive UI design in Flutter using LayoutBuilder.
+The layout changes between Column and Row based on the available screen width.
+Expanded and Card widgets are used to organize content across different screen sizes.
+Procedure:
+Step 1
+Create the project:
+flutter create responsive_ui
+cd responsive_ui
+code .
+Step 2
+Run:
+flutter run
+Step 3
+Open:
+lib/main.dart
+Step 4 – Create a responsive layout
+Use LayoutBuilder:
+LayoutBuilder(
+builder: (context, constraints) {
+if (constraints.maxWidth < 600) {
+return const Center(
+child: Text('Mobile Layout'),
+);
+}
+return const Center(
+child: Text('Desktop / Tablet Layout'),
+);
+},
+),
+Step 5 – Create mobile layout
+For smaller screens:
+Column(
+children: [
+Card(
+child: ListTile(
+title: Text('Student'),
+),
+),
+Card(
+child: ListTile(
+title: Text('Courses'),
+),
+
+24CS2016 Building Applications using Flutter
+
+),
+],
+)
+Step 6 – Create desktop layout
+For larger screens:
+Row(
+children: [
+Expanded(
+child: Card(
+child: ListTile(
+title: Text('Students'),
+),
+),
+),
+Expanded(
+child: Card(
+child: ListTile(
+title: Text('Courses'),
+),
+),
+),
+],
+)
+Step 7 – Test different screen sizes
+Resize the browser window or use different emulator sizes.
+Small screen → Column
+Large screen → Row
+
+24CS2016 Building Applications using Flutter

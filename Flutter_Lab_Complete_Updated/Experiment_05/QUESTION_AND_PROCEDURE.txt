@@ -1,0 +1,72 @@
+SOURCE LAB RECORD — QUESTION, OBJECTIVE, DESCRIPTION AND PROCEDURE
+Extracted from FLUTTER 1-12 MERGED.pdf. Formatting/OCR line breaks may be simplified.
+
+Exp No. 5
+Date: 14/09/26
+
+Implementation of Navigation and
+Routing
+
+REG. NO:
+URK23CS1230
+
+Objective:
+To implement navigation between multiple Flutter screens.
+Tools/Software Required:
+- Flutter
+Description:
+This experiment introduces navigation and routing between multiple screens in a Flutter application.
+Navigator.push and Navigator.pop are used to move to a new screen and return to the previous screen.
+Named routes are defined in MaterialApp and used with Navigator.pushNamed to open a screen by its route name.
+Procedure:
+Step 1
+Create project:
+flutter create navigation_app
+cd navigation_app
+code .
+Step 2 – Create three screens
+Create:
+lib/
+├── main.dart
+├── home.dart
+├── profile.dart
+└── details.dart
+Step 3 – Create Home Screen
+Add a button:
+ElevatedButton(
+onPressed: () {
+Navigator.push(
+context,
+MaterialPageRoute(
+builder: (context) => const ProfilePage(),
+),
+);
+},
+child: const Text('Go to Profile'),
+),
+Step 4 – Create Profile Screen
+Add:
+ElevatedButton(
+onPressed: () {
+Navigator.push(
+context,
+MaterialPageRoute(
+builder: (context) => const DetailsPage(),
+),
+);
+},
+child: const Text('View Details'),
+),
+Step 5 – Return to previous screen
+
+24CS2016 Building Applications using Flutter
+Navigator.pop(context);
+Step 6 – Add named routes
+Inside MaterialApp:
+routes: {
+'/': (context) => const HomePage(),
+'/profile': (context) => const ProfilePage(),
+'/details': (context) => const DetailsPage(),
+},
+Step 7 – Navigate using named route
+Navigator.pushNamed(context, '/profile');

@@ -1,0 +1,18 @@
+In pubspec.yaml, add under the existing dependencies: section:
+
+  sqflite: ^2.4.1
+  path: ^1.9.1
+
+Then run:
+  flutter pub get
+
+Copy both main.dart and database_helper.dart into the project's lib/ folder.
+
+This SQLite example demonstrates CREATE (insert), READ (query), and DELETE. UPDATE is part of the experiment's required CRUD concepts but is not exposed as a UI button in this compact example.
+
+Firebase setup:
+- Install/configure Firebase for the Flutter project using the official FlutterFire configuration workflow.
+- Add firebase_core and cloud_firestore.
+- Generate firebase_options.dart for your own Firebase project.
+- Initialize Firebase before runApp and use Cloud Firestore to write/read the students collection.
+- Do not use someone else's Firebase configuration. Firebase cannot work without your own project configuration.

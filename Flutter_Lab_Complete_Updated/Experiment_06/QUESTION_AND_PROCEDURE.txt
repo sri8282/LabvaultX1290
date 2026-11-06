@@ -1,0 +1,63 @@
+SOURCE LAB RECORD — QUESTION, OBJECTIVE, DESCRIPTION AND PROCEDURE
+Extracted from FLUTTER 1-12 MERGED.pdf. Formatting/OCR line breaks may be simplified.
+
+Exp No. 6
+Date: 21/09/26
+
+Integrate Animations and
+Transition
+
+REG. NO:
+URK23CS1230
+
+Objective:
+To implement animations and page transitions in Flutter.
+Tools/Software Required:
+- Flutter
+Description:
+This experiment introduces implicit animations in Flutter using the AnimatedContainer widget.
+A state variable is used to change the width and height of the container when a button is pressed.
+The AnimatedContainer automatically animates the change in size smoothly over the given duration.
+Procedure:
+Step 1
+Create:
+flutter create animation_app
+cd animation_app
+code .
+Step 2 – Create AnimatedContainer
+AnimatedContainer(
+duration: const Duration(seconds: 1),
+width: 200,
+height: 200,
+decoration: BoxDecoration(
+borderRadius: BorderRadius.circular(20),
+),
+child: const Center(
+child: Text('Flutter'),
+),
+)
+Step 3 – Create state variable
+bool isLarge = false;
+Step 4 – Change size
+AnimatedContainer(
+duration: const Duration(seconds: 1),
+width: isLarge ? 300 : 150,
+height: isLarge ? 300 : 150,
+child: const Center(
+child: Text('Flutter'),
+),
+)
+Step 5 – Add button
+ElevatedButton(
+onPressed: () {
+setState(() {
+isLarge = !isLarge;
+});
+},
+child: const Text('Animate'),
+),
+Step 6 – Test
+Click the Animate button.
+
+24CS2016 Building Applications using Flutter
+Observe the smooth size transition.

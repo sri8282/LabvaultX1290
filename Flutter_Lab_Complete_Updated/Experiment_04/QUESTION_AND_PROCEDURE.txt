@@ -1,0 +1,61 @@
+SOURCE LAB RECORD — QUESTION, OBJECTIVE, DESCRIPTION AND PROCEDURE
+Extracted from FLUTTER 1-12 MERGED.pdf. Formatting/OCR line breaks may be simplified.
+
+Exp No. 4
+Date: 07/09/26
+
+Utilize the Assets and Media
+
+REG. NO:
+URK23CS1230
+
+Objective:
+To add and display image, audio and video assets in a Flutter
+application.
+Tools/Software Required:
+- Flutter
+Description:
+This experiment demonstrates how to configure and use media assets in a Flutter application.
+An image is added through the assets directory and registered in pubspec.yaml for use in the app.
+Image.asset and GridView.count are used to display individual images and build a simple image gallery.
+Procedure:
+Step 1
+Create project:
+flutter create media_app
+cd media_app
+Step 2 – Create asset directory
+Inside the project:
+media_app/
+├── assets/
+│ ├── images/
+│ ├── audio/
+│ └── video/
+Step 3 – Add an image
+Copy an image into:
+assets/images/
+For example:
+assets/images/flutter.png
+Step 4 – Modify pubspec.yaml
+Add:
+flutter:
+assets:
+- assets/images/
+Be careful with YAML indentation.
+Step 5 – Get packages
+flutter pub get
+Step 6 – Display image
+Image.asset(
+'assets/images/flutter.png',
+)
+Step 7 – Create image gallery
+GridView.count(
+crossAxisCount: 2,
+children: [
+Image.asset('assets/images/flutter.png'),
+Image.asset('assets/images/flutter.png'),
+],
+)
+Step 8 – Test
+flutter run
+
+24CS2016 Building Applications using Flutter

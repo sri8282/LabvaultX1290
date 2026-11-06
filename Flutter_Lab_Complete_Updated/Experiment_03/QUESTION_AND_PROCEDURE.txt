@@ -1,0 +1,77 @@
+SOURCE LAB RECORD — QUESTION, OBJECTIVE, DESCRIPTION AND PROCEDURE
+Extracted from FLUTTER 1-12 MERGED.pdf. Formatting/OCR line breaks may be simplified.
+
+Exp No. 3
+Date: 07/09/26
+
+Add Interactivity to App – Input and
+Forms
+
+REG. NO:
+URK23CS1230
+
+Objective:
+To create an interactive Flutter form with input fields and
+validation.
+Tools/Software Required:
+- Flutter
+Description:
+This experiment introduces interactive Flutter forms using TextFormField and form validation.
+Input fields are created for student name, email, and password with suitable properties.
+A submit button validates the form and displays a confirmation message using SnackBar.
+Procedure:
+Step 1
+Create project:
+flutter create student_form
+cd student_form
+code .
+Step 2
+Open:
+lib/main.dart
+Step 3 – Create Form
+Create:
+final _formKey = GlobalKey<FormState>();
+Step 4 – Add TextFormField
+TextFormField(
+decoration: const InputDecoration(
+labelText: 'Student Name',
+),
+validator: (value) {
+if (value == null || value.isEmpty) {
+return 'Enter student name';
+}
+return null;
+},
+),
+Step 5 – Add email field
+TextFormField(
+decoration: const InputDecoration(
+labelText: 'Email',
+),
+keyboardType: TextInputType.emailAddress,
+),
+Step 6 – Add password
+TextFormField(
+obscureText: true,
+decoration: const InputDecoration(
+labelText: 'Password',
+),
+),
+Step 7 – Add Submit button
+
+24CS2016 Building Applications using Flutter
+ElevatedButton(
+onPressed: () {
+if (_formKey.currentState!.validate()) {
+ScaffoldMessenger.of(context).showSnackBar(
+const SnackBar(
+content: Text('Form submitted successfully'),
+),
+);
+}
+},
+child: const Text('Submit'),
+),
+Step 8 – Test validation
+Click Submit without entering information. The
+application should display validation messages.

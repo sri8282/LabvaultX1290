@@ -1,0 +1,128 @@
+SOURCE LAB RECORD — QUESTION, OBJECTIVE, DESCRIPTION AND PROCEDURE
+Extracted from FLUTTER 1-12 MERGED.pdf. Formatting/OCR line breaks may be simplified.
+
+Exp No. 1
+Date: 24/08/26
+
+Working With Widgets and Layouts
+
+REG. NO:
+URK23CS1230
+
+Objective:
+To develop a Flutter application using basic widgets and layout widgets such as
+Container, Row, Column, Expanded, Card, and ListView.
+Tools/Software Required:
+- Flutter
+Description:
+This experiment introduces basic Flutter widgets used to build a student profile interface.
+Widgets such as Column, Row, Container, Card, ListTile, and ListView are used to organize UI elements.
+It demonstrates layout arrangement, spacing, icons, cards, and displaying multiple items in a list.
+Procedure:
+Step 1 – Check Flutter installation
+Open Terminal:
+flutter doctor
+Check whether Flutter is installed correctly.
+Then check the available devices:
+flutter devices
+Step 2 – Create a Flutter project
+flutter create widget_layout
+Move into the project:
+cd
+widget_layout
+Open in VS Code:
+code .
+Step 3 – Run the default application
+flutter run
+Step 4 – Open lib/main.dart
+Delete the existing code.
+Create the basic Flutter application:
+import 'package:flutter/material.dart';
+void main() {
+runApp(const MyApp());
+}
+class MyApp extends StatelessWidget {
+const
+MyApp({super.key});
+@override
+Widget build(BuildContext context) {
+return
+MaterialApp(
+debugShowCheckedModeBanner: false,
+home: Scaffold(
+appBar: AppBar(
+title: const Text('Student Profile'),
+),
+body: const Center(
+child: Text('Welcome to Flutter'),
+),
+),
+);
+}
+}
+
+24CS2016 Building Applications using Flutter
+Step 5 – Add a Column
+Replace the body with:
+body:
+Column(
+children: [
+const Text('Student Name'),
+const Text('Computer Science and Engineering'),
+const Text('Flutter Laboratory'),
+],
+),
+Step 6 – Add a Container
+body: Column(
+children:
+[
+Container(
+padding: const EdgeInsets.all(20),
+margin: const EdgeInsets.all(10),
+child: const Text('Student Profile'),
+),
+const Text('Raj'),
+const Text('CSE'),
+],
+),
+Step 7 – Add a Row
+Row(
+mainAxisAlignmentMainAxisAlignment.spaceEvenly, children:
+const [
+Icon(Icons.home),
+Icon(Icons.person),
+Icon(Icons.settings),
+],
+),
+Step 8 – Add Cards
+Card(
+child: ListTile(
+leading: const Icon(Icons.book),
+title: const Text('Flutter'),
+subtitle: const Text('Mobile Application Development'),
+),
+),
+Step 9 – Add multiple items using ListView
+ListView(
+children: const [
+ListTile(
+leading:
+Icon(Icons.book),
+title: Text('Flutter'),
+),
+ListTile(
+leading:
+Icon(Icons.cloud),
+title: Text('Cloud Computing'),
+),
+ListTile(
+leading:
+Icon(Icons.code),
+title: Text('Programming'),
+),
+],
+),
+Step 10 – Run
+flutter run
+
+24CS2016 Building Applications using Flutter
